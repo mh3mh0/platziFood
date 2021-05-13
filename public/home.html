@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+
+</head>
+
+<body>
+    <nav x-data="{open:false}" class="sticky top-0 z-10 w-full bg-secondary text-gray-100">
+        <div class="px-2 bg-secondary text-white flex justify-between items-center">
+            <div><img class="h-11 py-1 px-2" src="images/hamburger.svg" alt=""></div>
+            <div><img class="h-11 py-1 px-2" src="images/logo-w.svg" alt=""></div>
+            <div class="cursor-pointer text-4xl px-2" @click="open=true">&equiv;</div>
+        </div>
+
+        <div x-show.transition.duration.600ms="open" @click.away="open = false">
+            <div class="my-1 mx-2">
+                <input class="form-control" type="search" placeholder="Search...">
+            </div>
+            <div class="py-1 mx-2 md:flex justify-around">
+                <div class="flex">
+                    Price:
+                    <div class="ml-2">$</div>
+                    <div class="ml-2 text-primary">$$</div>
+                    <div class="ml-2">$$$</div>
+                    <div class="ml-2">$$$$</div>
+                </div>
+                <div class="flex">
+                    <div class="">
+                        Rate
+                    </div>
+                    <div class="ml-2 text-primary">&starf; </div>
+                    <div class="ml-px text-primary">&starf; </div>
+                    <div class="ml-px text-primary">&starf; </div>
+                    <div class="ml-px">&starf; </div>
+                    <div class="ml-px">&starf; </div>
+                </div>
+                <div>
+                    <button
+                        class="rounded py-1 shadow-x px-4 border border-blue-300 text-white block bg-yellow-700 focus:outline-none focus:ring">Filter</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class=" bg-third mb-8">
+        <div class="h-56 md:h-80 md:bg-center bg-no-repeat bg-cover bg-bottom"
+            style="background-image: url(https://images.unsplash.com/photo-1587574293340-e0011c4e8ecf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);">
+        </div>
+        <div class="container mx-auto md:flex">
+            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
+                <div>
+                    <img class="w-full md:w-48 md:h-full object-cover object-left rounded-lg md:rounded-r-none"
+                        src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500q=80"
+                        alt="">
+                </div>
+                <div class="relative mx-2 p-2 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg -mt-2">
+                    <h2 class="text-xl tracking-tighter font-semibold uppercase text-gray-900 md:text-lg">
+                        fatty chess
+                        burger
+                    </h2>
+                    <p class="text-gray-700 leading-snug">Amazing burger with french cheese and red pepper
+                        on the top!
+                    </p>
+                    <div class="mt-2 text-sm font-semibold text-gray-700">EUR 15</div>
+                    <div class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&star; / 36 review</div>
+                </div>
+            </div>
+            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
+                <div>
+                    <img class="w-full md:w-48 md:h-full object-cover object-left rounded-lg md:rounded-r-none"
+                        src="https://images.unsplash.com/photo-1563551342926-21cc8d785013?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&h=750q=80"
+                        alt="">
+                </div>
+                <div class="relative mx-2 p-2 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg -mt-2">
+                    <h2 class="text-xl tracking-tighter font-semibold uppercase text-gray-900 md:text-lg">
+                        chicken
+                        burger
+                    </h2>
+                    <p class="text-gray-700 leading-snug">Juicy chicken meat with guacamole sauce!
+                    </p>
+                    <div class="mt-2 text-sm font-semibold text-gray-700">EUR 15</div>
+                    <div class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&star; / 43 review</div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-4 mx-2">
+            <div>
+                <div>Name</div>
+                <input class="form-control focus:outline-none focus:ring" type="text" placeholder=" Enter your name" />
+            </div>
+            <div>
+                <div>Email</div>
+                <input class="form-control hover:bg-white focus:outline-none focus:ring" type="email"
+                    placeholder="Email" />
+            </div>
+            <div>
+                <div>Comments</div>
+                <textarea class="form-control hover:bg-white focus:outline-none focus:ring" name="" id="" cols="30"
+                    rows="10"></textarea>
+            </div>
+            <div>
+                <button
+                    class="rounded py-1 shadow-x px-4 border border-blue-300 text-white bg-secondary mx-auto block hover:shadow-none hover:bg-yellow-700 focus:outline-none focus:ring">Send</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="w-full text-white bg-secondary">
+        <div class="md:flex md:flex-row-reverse justify-around">
+            <div class="mt-4 ml-8">
+                <div class="hover:text-blue-600"><i class="fa fa-facebook"></i> /facebook</div>
+                <div class="hover:text-blue-400"><i class="fa fa-twitter"></i> @platzifood</div>
+                <div class="hover:text-pink-500"><i class="fa fa-instagram"></i> @platzifood</div>
+            </div>
+            <ul class="mt-4 mb-4 ml-8 md:list-disc">
+                <li>Support</li>
+                <li>About us</li>
+                <li>Register</li>
+                <li>Privacy Policy </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
